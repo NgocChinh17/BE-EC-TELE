@@ -25,7 +25,6 @@ const authMiddleware = (req, res, next) => {
 
 const authUserMiddleware = async (req, res, next) => {
   const token = req.headers.token.split(" ")[1]
-
   try {
     const user = await jwt.verify(token, process.env.ACCESS_TOKEN)
     const userInfo = await User.findById(user.id)

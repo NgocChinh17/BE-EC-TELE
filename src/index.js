@@ -19,9 +19,9 @@ app.use(cookieParser())
 
 routes(app)
 
-app.use((err, req, res, next) => {
-  res.status(404).send(err.message("err"))
-})
+// app.use((err, req, res, next) => {
+//   res.status(404).send(err.message("err"))
+// })
 
 mongoose
   .connect(`${process.env.MONGO_DB}`)
